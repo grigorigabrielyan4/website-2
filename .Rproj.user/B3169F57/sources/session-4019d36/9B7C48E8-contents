@@ -2,3 +2,89 @@
 title: "Analysis"
 editor: visual
 ---
+
+
+```{r}
+
+library(tidyverse)
+data <- read.csv("players_in_chess.csv")
+
+data <- data[order(data$rating, decreasing = TRUE),]
+
+
+# data
+
+
+```
+
+
+
+```{r graphic1}
+data2 <- head(data, n = 10)
+
+graphic1 <- ggplot(data2, mapping = aes(x = reorder(name, -rating) , y = rating , fill = country)) + 
+  geom_col()  
+graphic1+
+  labs(
+    title = "Plaers and Ratihgs",
+    subtitle = "Per Country",
+    x = "Name",
+    y = "Rating"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+        
+
+```
+
+
+
+```{r graphic2}
+data3 <- head(data, n = 100)
+
+
+
+
+graphic2 <- ggplot(data3, mapping = aes(x = country  , fill = country)) + 
+  geom_histogram(stat="count", linewidth = 0.5)  
+
+graphic2+
+  labs(
+    title = "",
+    subtitle = "Per Country",
+    x = "Name",
+    y = "Frequency"
+  )
+        
+
+```
+
+
+```{r graphic3}
+data4<- data %>%
+filter(country == c("India"))
+
+
+
+
+graphic3 <- ggplot(data4, mapping = aes(x = name  , y = rating , fill = country)) + 
+ geom_density( linewidth = 0.5)  
+
+
+graphic3+
+  labs(
+    title = "",
+    subtitle = "Per Country",
+    x = "Name",
+    y = "Frequency"
+  )
+        
+
+```
+
+
+
+
+
+
+
+
