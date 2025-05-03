@@ -44,7 +44,7 @@ data3 <- head(data, n = 100)
 
 
 
-graphic2 <- ggplot(data3, mapping = aes(x = country  , fill = country)) + 
+graphic2 <- ggplot(data3, mapping = aes(x = reorder(country, -rating) , fill = country)) + 
   geom_histogram(stat="count", linewidth = 0.5)  
 
 graphic2+
@@ -53,8 +53,8 @@ graphic2+
     subtitle = "Per Country",
     x = "Name",
     y = "Frequency"
-  )
-        
+  ) +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))    
 
 ```
 
