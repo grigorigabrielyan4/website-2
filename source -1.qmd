@@ -1,5 +1,0 @@
----
-title: "Source 1"
-format: html
-editor: visual
----
