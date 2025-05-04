@@ -5,7 +5,5 @@ title: "About"
 ## About Me
 
 
-My name is **David Kane**, and I graduated from *Williams College*.
-
-[Kane's Free Data Science Bootcamp](https://bootcamp.davidkane.info)
+My name is Grigori, and I am a student at TUMO.
 

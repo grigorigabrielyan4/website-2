@@ -1,36 +1,55 @@
 ---
-title: "My Cool Plot"
+title: "Home"
+echo: false
+message: false
 ---
 
-
+Բարի գալուստ իմ պրոջեքտ ես հետազոտել եմ շախմատիստների մասին:
 
 ```{r}
 #| echo: false
-
-#| label: diamonds-plot
-
-library(tidyverse)
-```
-```{r}
-diamonds |> 
-  filter(z != 0) |> 
-  filter(color == "D") |> 
-  ggplot(aes(x = carat, y = price, color = cut)) + 
-    geom_point() +
-    scale_y_continuous(labels = scales::dollar) +
-    labs(title = "Prices and Sizes for Diamonds of Color D",
-         subtitle = "'Round' carat values like 1, 1.5 and 2 are more common.",
-         x = "Carat",
-         y = "Price")
-```
-
-
-```{r}
 #| message: false
 
-#| echo: false
-
-#| label: setup
+library(magick)
+img <- image_read("img/carlson.avif")
+plot(img)
 ```
 
+
+```{r2}
+#| echo: false
+#| message: false
+
+# library(dplyr)
+# library(ggplot2)
+# 
+# # Get the top 100 rows
+# data3 <- head(data, n = 100)
+# 
+# # Reorder 'country' by descending frequency
+# country_order <- data3 %>%
+#   count(country) %>%
+#   arrange(desc(n)) %>%
+#   pull(country)
+# 
+# # Convert 'country' to a factor with levels in descending frequency
+# data3$country <- factor(data3$country, levels = country_order)
+# 
+# # Plot the graph
+# graphic2 <- ggplot(data3, aes(x = country, fill = country)) +
+#   geom_bar(linewidth = 0.5) +
+#   labs(
+#     title = "",
+#     subtitle = "Players Per Country",
+#     x = "Name",
+#     y = "Frequency"
+#   ) +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+# 
+# ggsave("players_per_country.jpeg")
+
+img2 <- image_read("players_per_country.jpeg")
+img2
+
+```
 

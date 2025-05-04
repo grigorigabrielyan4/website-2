@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sources – ls</title>
+<title>Sources – Chess analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">ls</span>
+    <span class="navbar-title">Chess analysis</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -95,6 +95,14 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./sources.html" aria-current="page"> 
+<span class="menu-text">Sources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis.html"> 
+<span class="menu-text">Analysis</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -132,15 +140,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<pre><code>website:
-  title: "Website 2"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - href: sources.qmd
-        text: Sources</code></pre>
+<p>I am using data from Kaggle. It is from 2023.</p>
+<p>https://www.kaggle.com/datasets/goldian/chess</p>
 
 
 
@@ -237,7 +238,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/grigorigabrielyan4\.github\.io\/website-2\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

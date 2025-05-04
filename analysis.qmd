@@ -1,11 +1,10 @@
 ---
 title: "Analysis"
-editor: visual
 ---
 
 
 ```{r}
-
+#| echo: false
 library(tidyverse)
 data <- read.csv("players_in_chess.csv")
 
@@ -13,13 +12,11 @@ data <- data[order(data$rating, decreasing = TRUE),]
 
 
 # data
-
-
 ```
 
 
-
 ```{r graphic1}
+
 data2 <- head(data, n = 10)
 
 graphic1 <- ggplot(data2, mapping = aes(x = reorder(name, -rating) , y = rating , fill = country)) + 
@@ -39,52 +36,86 @@ graphic1+
 
 
 ```{r graphic2}
+library(dplyr)
+library(ggplot2)
+
+# Get the top 100 rows
 data3 <- head(data, n = 100)
 
+# Reorder 'country' by descending frequency
+country_order <- data3 %>%
+  count(country) %>%
+  arrange(desc(n)) %>%
+  pull(country)
 
+# Convert 'country' to a factor with levels in descending frequency
+data3$country <- factor(data3$country, levels = country_order)
 
-
-graphic2 <- ggplot(data3, mapping = aes(x = reorder(country, -rating) , fill = country)) + 
-  geom_histogram(stat="count", linewidth = 0.5)  
-
-graphic2+
+# Plot the graph
+graphic2 <- ggplot(data3, aes(x = country, fill = country)) + 
+  geom_bar(linewidth = 0.5) +
   labs(
     title = "",
     subtitle = "Per Country",
     x = "Name",
     y = "Frequency"
   ) +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1))    
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+graphic2
+ 
 
 ```
 
 
+       
 ```{r graphic3}
-data4<- data %>%
-filter(country == c("India"))
+data4 <- data %>% 
+  filter(country == "RUS")
 
 
-
-
-graphic3 <- ggplot(data4, mapping = aes(x = name  , y = rating , fill = country)) + 
- geom_density( linewidth = 0.5)  
+graphic3<- ggplot(data4,mapping = aes(x=rating, fill = country)) +
+  geom_histogram()
 
 
 graphic3+
-  labs(
-    title = "",
-    subtitle = "Per Country",
-    x = "Name",
-    y = "Frequency"
-  )
-        
-
+ labs(title="",
+       subtitle="",
+       x="Name",
+       y="",
+ )
 ```
 
 
+```{r}
+library(dplyr)
+library(ggplot2)
+library(countrycode)
 
+# Map ISO3 country codes to continents
+data_with_continent <- data %>%
+  mutate(continent = countrycode(country, origin = "iso3c", destination = "continent"))
 
+# Compute average rating by continent
+avg_rating_by_continent <- data_with_continent %>%
+  filter(!is.na(rating), !is.na(continent)) %>%
+  group_by(continent) %>%
+  summarise(avg_rating = mean(rating, na.rm = TRUE)) %>%
+  arrange(desc(avg_rating))
 
+# Reorder for plotting
+avg_rating_by_continent$continent <- factor(avg_rating_by_continent$continent, levels = avg_rating_by_continent$continent)
 
+# Plot
+ggplot(avg_rating_by_continent, aes(x = continent, y = avg_rating, fill = continent)) +
+  geom_bar(stat = "identity", linewidth = 0.5) +
+  labs(
+    title = "Average Chess Rating by Continent",
+    x = "Continent",
+    y = "Average Rating"
+  ) +
+  theme_minimal()
+
+```
 
 
