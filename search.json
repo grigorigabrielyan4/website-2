@@ -11,7 +11,7 @@
     "href": "sources.html",
     "title": "Sources",
     "section": "",
-    "text": "website:\n  title: \"Website 2\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n      - href: sources.qmd\n        text: Sources\nԵս օգտվել եմ Kaggle data . Այս datan 2023 թվականի տվյալներ. https://www.kaggle.com/datasets/goldian/chess"
+    "text": "I am using data from Kaggle. It is from 2023.\nhttps://www.kaggle.com/datasets/goldian/chess"
   },
   {
     "objectID": "index.html",
@@ -25,13 +25,13 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Իմ անունը Գրիգօրի է ես Թումոյի աշակերտ եմ."
+    "text": "My name is Grigori, and I am a student at TUMO."
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
     "title": "About",
     "section": "",
-    "text": "Իմ անունը Գրիգօրի է ես Թումոյի աշակերտ եմ."
+    "text": "My name is Grigori, and I am a student at TUMO."
   }
 ]
