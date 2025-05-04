@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Բարի գալուստ իմ պրոջեքտ ես հետազոտել եմ շախմատիստների մասին:\n\n\n\n\n\n\n\n\n\n\n# library(dplyr)\n# library(ggplot2)\n# \n# # Get the top 100 rows\n# data3 &lt;- head(data, n = 100)\n# \n# # Reorder 'country' by descending frequency\n# country_order &lt;- data3 %&gt;%\n#   count(country) %&gt;%\n#   arrange(desc(n)) %&gt;%\n#   pull(country)\n# \n# # Convert 'country' to a factor with levels in descending frequency\n# data3$country &lt;- factor(data3$country, levels = country_order)\n# \n# # Plot the graph\n# graphic2 &lt;- ggplot(data3, aes(x = country, fill = country)) + \n#   geom_bar(linewidth = 0.5) +\n#   labs(\n#     title = \"\",\n#     subtitle = \"Per Country\",\n#     x = \"Name\",\n#     y = \"Frequency\"\n#   ) +\n#   theme(axis.text.x = element_text(angle = 45, hjust = 1))\n# \n# ggsave(\"players_per_country.jpeg\")\n\nimg2 &lt;- image_read(\"players_per_country.jpeg\")\nimg2"
+    "text": "Բարի գալուստ իմ պրոջեքտ ես հետազոտել եմ շախմատիստների մասին:"
   },
   {
     "objectID": "about.html",
