@@ -106,7 +106,7 @@ graphic3+
        y="Number of Players",
  )
 ```
-2812
+Գարի Կասպարովը առաջին տեղում է Ռուսատանում իսկ աշխարում 2 տեղում է նրա  ռեյտինգը 2812 է:
 
 
 
@@ -144,5 +144,7 @@ ggplot(avg_rating_by_continent, aes(x = continent, y = avg_rating, fill = contin
   theme(legend.position="none")
 
 ```
+Առաջին տեղում գտնվում է Ամերիկան :
+
 
 

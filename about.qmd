@@ -5,5 +5,6 @@ title: "About"
 ## About Me
 
 
-My name is Grigori, and I am a student at TUMO.
+Իմ անւնը Գրիգորի է ես տւմօյի աշակերտ եմ:
+ես շատ եմ սիրում շախմատը այդ պատճառով ես ստեղծել եմ իմ պրոեքտը շախմատը մասին:
 

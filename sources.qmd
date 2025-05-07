@@ -2,6 +2,6 @@
 title: "Sources"
 ---
 
-I am using data from Kaggle. It is from 2023.
+Ես օգտվել եմ  Kaggle. Այդ տվյալենրը  2023:
 
 [https://www.kaggle.com/datasets/goldian/chess](https://www.kaggle.com/datasets/goldian/chess)
