@@ -1,10 +1,15 @@
 ---
 title: "Analysis"
+echo: false
+message: false
+warning: false
 ---
 
 
 ```{r}
 #| echo: false
+#| message: false
+
 library(tidyverse)
 data <- read.csv("players_in_chess.csv")
 
@@ -16,14 +21,15 @@ data <- data[order(data$rating, decreasing = TRUE),]
 
 
 ```{r graphic1}
-
+#| echo: false
+#| message: false
 data2 <- head(data, n = 10)
 
 graphic1 <- ggplot(data2, mapping = aes(x = reorder(name, -rating) , y = rating , fill = country)) + 
   geom_col()  
 graphic1+
   labs(
-    title = "Plaers and Ratihgs",
+    title = "Players and Ratings",
     subtitle = "Per Country",
     x = "Name",
     y = "Rating"
@@ -32,10 +38,16 @@ graphic1+
         
 
 ```
+Առաջին տեղում Մագնուս Կառլսենէ նրա ռեյտինգը 2865 և նորվեգիացի է:
+
 
 
 
 ```{r graphic2}
+#| echo: false
+#| message: false
+#| warning: false
+
 library(dplyr)
 library(ggplot2)
 
@@ -55,21 +67,30 @@ data3$country <- factor(data3$country, levels = country_order)
 graphic2 <- ggplot(data3, aes(x = country, fill = country)) + 
   geom_bar(linewidth = 0.5) +
   labs(
-    title = "",
-    subtitle = "Per Country",
+    title = "Players Per Country",
+    subtitle = "",
     x = "Name",
-    y = "Frequency"
+    y = "Number of players"
   ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+ 
+  theme(legend.position="none")
 
 graphic2
- 
+
+#ggsave("players_per_country.jpeg")
+
+#img2 <- image_read("players_per_country.jpeg")
+#img2
+
 
 ```
-
+Ամենից շատ շախմատիստները գտնվում են Ռուսաստանում:
 
        
 ```{r graphic3}
+#| echo: false
+#| message: false
+#| warning: false
 data4 <- data %>% 
   filter(country == "RUS")
 
@@ -79,15 +100,20 @@ graphic3<- ggplot(data4,mapping = aes(x=rating, fill = country)) +
 
 
 graphic3+
- labs(title="",
+ labs(title="Score of Players from Russia",
        subtitle="",
-       x="Name",
-       y="",
+       x="Rating",
+       y="Number of Players",
  )
 ```
+2812
+
 
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 library(dplyr)
 library(ggplot2)
 library(countrycode)
@@ -114,7 +140,8 @@ ggplot(avg_rating_by_continent, aes(x = continent, y = avg_rating, fill = contin
     x = "Continent",
     y = "Average Rating"
   ) +
-  theme_minimal()
+  theme_minimal() + 
+  theme(legend.position="none")
 
 ```
 

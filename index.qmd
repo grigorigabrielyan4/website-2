@@ -5,6 +5,8 @@ message: false
 ---
 
 Բարի գալուստ իմ պրոջեքտ ես հետազոտել եմ շախմատիստների մասին:
+Իմ պրոեքտ ներկայացնում է 
+
 
 ```{r}
 #| echo: false
@@ -16,7 +18,7 @@ plot(img)
 ```
 
 
-```{r2}
+```{r }
 #| echo: false
 #| message: false
 
@@ -49,7 +51,7 @@ plot(img)
 # ggsave("players_per_country.jpeg")
 
 img2 <- image_read("players_per_country.jpeg")
-img2
+plot(img2)
 
 ```
 
